@@ -1,81 +1,127 @@
-# AI-Powered-Offline-Interview-System
-🔥 AI Interview Simulator (Offline, Multi-Agent, Llama-Powered)
+🚀 AI Interview Simulator
 
-A fully offline, privacy-preserving AI interview simulator built with local LLMs using Ollama, featuring a multi-agent architecture, real-time evaluation, dynamic question generation, and a clean Streamlit UI.
+Fully Offline • Multi-Agent Architecture • Llama 3.1 (Ollama) • Streamlit UI
 
-🚀 Features
-🧠 Multi-Agent Intelligence
+A production-ready offline AI interview platform powered by local LLMs, featuring adaptive questioning, role-based question generation, semantic evaluation, and multi-agent orchestration — without requiring any API keys or internet access.
 
-Interviewer Agent → Conducts the interview and asks adaptive questions
+This project demonstrates strong skills in LLM application engineering, agent design, system orchestration, full-stack integration, and offline RAG pipelines — ideal for real-world enterprise deployments.
 
-Question Generator → Creates role-specific, difficulty-scaled questions
+<div align="center">
+🔥 100% Local. 100% Private. 100% Real AI.
 
-Evaluator Agent → Scores candidate answers (technical depth, clarity, relevance)
+https://img.shields.io/badge/LLM-Llama3.1-green
 
-Explanation Agent → Gives model-backed explanations and corrections
+https://img.shields.io/badge/Framework-Ollama-blue
 
-⚙️ Offline-First Architecture
+https://img.shields.io/badge/UI-Streamlit-red
 
-No API keys
+https://img.shields.io/badge/Database-ChromaDB-purple
 
-No internet required
+https://img.shields.io/badge/Architecture-Multi--Agent-yellow
 
-Powered 100% by Ollama + Llama 3.1 + local embeddings
+</div>
+📌 Overview
 
-📚 Retrieval-Augmented Generation (RAG)
+This system simulates a complete technical interview experience:
 
-Uses nomic-embed-text for embeddings
+💬 Conversational Interviewer (adaptive, natural, context-aware)
 
-Stores vectors in ChromaDB
+🧠 Dynamic Question Generator (role, difficulty, and experience-based)
 
-Improves interview quality using contextual retrieval
+📊 Evaluator Agent (semantic scoring + feedback)
 
-🖥️ Clean Frontend
+📝 Explanation Agent (shows correct answers / reasoning)
 
-Streamlit interface
+🔎 Offline Embedding + RAG Support (ChromaDB + Nomic embeddings)
 
-Real-time interaction
+🖥 Streamlit UI (clean, responsive, real-time interaction)
 
-Persistent interview sessions
-🏗️ Architecture Overview
-           ┌──────────────────────────────┐
-           │         Streamlit UI          │
-           └───────────────┬──────────────┘
-                           │
-                 Interview Orchestrator
-                           │
-   ┌────────────────┬──────────────┬─────────────────┐
-   │                │              │                 │
-Question     Interviewer     Evaluator      Explanation
-Generator         Agent          Agent            Agent
-   │                │              │                 │
-   └─────────────── Llama 3.1 via Ollama ────────────┘
-                           │
-                  Local Embeddings (nomic)
-                           │
-                   Chroma Vector Store
-                   
-  📦 Folder Structure
+Everything runs offline, making the project suitable for enterprise compliance, security-first applications, and deployment inside restricted environments.
 
-  project-root/
-│── app.py
+🧠 Multi-Agent Architecture
+                         ┌──────────────────────────┐
+                         │      Streamlit UI        │
+                         └────────────┬─────────────┘
+                                      │
+                           Interview Orchestrator
+                                      │
+     ┌────────────────────┬───────────┬──────────────────┬──────────────────┐
+     │                    │           │                  │                  │
+┌────────────┐     ┌────────────┐  ┌───────────┐  ┌────────────┐   ┌─────────┐
+│ Interviewer│     │ Question   │  │ Evaluator │  │ Explanation │   │ Vector  │
+│   Agent    │     │ Generator  │  │   Agent   │  │    Agent    │   │  Store  │
+└────────────┘     └────────────┘  └───────────┘  └────────────┘   └─────────┘
+     │                     │            │              │               │
+     └───────────────────── Llama 3.1 (via Ollama) ────────────────────┘
+                                      │
+                               Local Embeddings
+                                      │
+                                   ChromaDB
+
+✨ Features
+🧩 1. Offline LLM Engine
+
+Runs on Llama 3.1 via Ollama
+
+No OpenAI API required
+
+Fast, private, and secure
+
+🤖 2. Multi-Agent System
+
+Interviewer Agent: human-like dialog
+
+Question Generator: custom questions
+
+Evaluator: scores correctness, depth, clarity
+
+Explanation: provides ideal answers
+
+📚 3. RAG + Embeddings
+
+Uses nomic-embed-text model
+
+Stores embeddings in ChromaDB
+
+Enhances question quality & evaluation
+
+🖥 4. Modern UI
+
+Built using Streamlit
+
+Live conversation
+
+Session tracking
+
+Evaluation summary
+
+🔌 5. Plug-and-Play Architecture
+
+Agents are modular and easily replaceable.
+
+📂 Folder Structure
+project-root/
+│── app.py                           # Streamlit UI
 │── README.md
 │── .env
+│── requirements.txt
+│
 │── backend/
-│    ├── agents/
-│    │    ├── interviewer_agent.py
-│    │    ├── question_generator.py
-│    │    ├── evaluator_agent.py
-│    │    ├── simple_explanation.py
-│    ├── orchestrator/
-│    │    └── interview_orchestrator.py
-│    ├── core/
-│    │    ├── config.py
-│    │    ├── embeddings.py
-│    │    └── vector_store.py
+│   ├── agents/
+│   │    ├── interviewer_agent.py
+│   │    ├── question_generator.py
+│   │    ├── evaluator_agent.py
+│   │    ├── simple_explanation.py
+│   │
+│   ├── orchestrator/
+│   │    └── interview_orchestrator.py
+│   │
+│   ├── core/
+│   │    ├── config.py
+│   │    ├── embeddings.py
+│   │    └── vector_store.py
+│
 │── data/
 │── logs/
+│── screenshots/
 │── venv/
-
-
-
